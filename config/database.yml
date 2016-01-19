@@ -3,26 +3,26 @@ development:
   encoding: unicode
   port:     5432
   host:     127.0.0.1
-  database: <%= ENV['POSTGRES_DEV_DB'] %>
-  pool:     <%= ENV['POSTGRES_DEV_POOLSIZE'] %>
-  username: <%= ENV['POSTGRES_USERNAME'] %>
-  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  database: <%= ENV["POSTGRES_DEV_DB"] %>
+  pool:     <%= ENV["POSTGRES_DEV_POOLSIZE"] %>
+  username: <%= ENV["POSTGRES_USERNAME"] %>
+  password: <%= ENV["POSTGRES_PASSWORD"] %>
 
 test:
   adapter:  postgresql
   encoding: unicode
   port:     5432
   host:     127.0.0.1
-  database: <%= ENV['POSTGRES_TEST_DB'] %>
-  pool:     <%= ENV['POSTGRES_TEST_POOLSIZE'] %>
-  username: <%= ENV['POSTGRES_USERNAME'] %>
-  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  database: <%= ENV["POSTGRES_TEST_DB"] %>
+  pool:     <%= ENV["POSTGRES_TEST_POOLSIZE"] %>
+  username: <%= ENV["POSTGRES_USERNAME"] %>
+  password: <%= ENV["POSTGRES_PASSWORD"] %>
 
 production:
   adapter:  postgresql
   encoding: unicode
   port:     5432
-  database: <%= ENV['POSTGRES_PROD_DB'] %>
-  pool:     <%= ENV['POSTGRES_PROD_POOLSIZE'] %>
-  username: <%= ENV['POSTGRES_USERNAME'] %>
-  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  database: <%= ENV["POSTGRES_PROD_DB"] %>
+  pool:     <%= ENV["POSTGRES_PROD_POOLSIZE"] %>
+  username: <%= ENV["POSTGRES_USERNAME"] %>
+  password: <%= ENV["POSTGRES_PASSWORD"] %>
