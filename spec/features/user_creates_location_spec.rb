@@ -12,6 +12,11 @@ feature "User creates location" do
     click_on "Create Location"
     expect(page).to have_css "#notice", text: "Location was successfully created."
     expect(page).to have_content("Seattle, WA 98101")
-    
+
+    expect(page).to have_content("Neighborhood Demographics").and have_link("Neighborhood Data")
+    expect(page).to have_content("School District Information").and have_link("Search Schools")
+    expect(page).to have_content("Find your new favorite hangout").and have_link("Yelp")
+    expect(page).to have_content("Meet your neighbors").and have_link("Nextdoor.com")
+
   end
 end
