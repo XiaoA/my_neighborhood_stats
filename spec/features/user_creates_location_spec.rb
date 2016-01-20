@@ -11,5 +11,7 @@ feature "User creates location" do
 
     click_on "Create Location"
     expect(page).to have_css "#notice", text: "Location was successfully created."
+    expect(page).to have_content("Seattle, WA 98101")
+    
   end
 end
