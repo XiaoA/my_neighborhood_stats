@@ -13,14 +13,17 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'figaro'
+gem 'bcrypt', '~>3.1.10'
 
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~>3.4.0'
+  gem 'fabrication', '~>2.14.1'
 end
 
 group :test do
   gem 'capybara', '~>2.6.0'
+  gem 'faker'
 end
 
 group :development do
