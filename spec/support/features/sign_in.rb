@@ -1,4 +1,19 @@
 module Features
+  def sign_in_with_valid_credentials
+    visit root_path
+    click_on "Sign in"
+    fill_in "Email", with: "sherlock@example.com"
+    fill_in "Password", with: "e1m3taRY!#MyD3arWa2*"
+    click_on "Sign in"
+  end
+
+    def sign_in_with_invalid_credentials
+    visit root_path
+    click_on "Sign in"
+    fill_in "Email", with: nil
+    fill_in "Password", with: "e1m3t!#MyD3arWa2*"
+    click_on "Sign in"
+  end
 
   def create_user_valid_credentials
     visit root_path
@@ -10,10 +25,7 @@ module Features
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
 
-
     click_button 'Create User'
-
-    expect(page).to have_content('User has been created.')
   end
 
   def create_user_invalid_credentials
@@ -24,9 +36,7 @@ module Features
     fill_in 'Last name', with: nil
     fill_in 'Email', with: 'whatever'
     fill_in 'Password', with: 'password'
-    fill_in 'Confirm Password', with: 'password'
+    fill_in 'Password confirmation', with: 'password'
     click_button 'Create User'
-
-    expect(page).to have_content('User has not been created.')    
   end
 end

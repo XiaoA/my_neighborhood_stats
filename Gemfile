@@ -24,10 +24,12 @@ end
 group :test do
   gem 'capybara', '~>2.6.0'
   gem 'faker'
+  gem 'database_cleaner'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'pry'
 end
 

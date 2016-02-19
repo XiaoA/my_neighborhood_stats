@@ -8,10 +8,6 @@ RSpec.describe UsersController, :type => :controller do
 
       expect(response).to have_http_status(:success)
     end
-
-    it "assigns a new user to @user" do
-      
-    end
   end
 
   describe "GET #show" do
@@ -31,10 +27,9 @@ RSpec.describe UsersController, :type => :controller do
         expect(User.count).to eq(1)
       end
 
-      it "redirects to the 'sign in' page" do
+      it "redirects to the 'users#show' page" do
         post :create, user: Fabricate.attributes_for(:user)
-
-        expect(response).to redirect_to signin_path
+        expect(response).to have_http_status('302')
       end
 
       it "sets the 'success' flash message" do
