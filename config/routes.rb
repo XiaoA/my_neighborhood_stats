@@ -3,11 +3,12 @@ Rails.application.routes.draw do
 
   get 'static_pages/home'
   get 'static_pages/about'
-  get 'signup', to: 'users#new'
-  get 'login', to: 'sessions#new'
-  post 'login', to: 'sessions#create'
+  get '/signup', to: 'users#new'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy', as: 'logout'
 
   resources :locations, only: [:index, :new, :create, :show]
-  resource :session, only: [:new, :create]
+  resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:show, :new, :create]
 end
