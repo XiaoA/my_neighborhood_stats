@@ -16,3 +16,4 @@
 /config/application.yml
 /*.pem
 /get-pip.py
+.DS_Store

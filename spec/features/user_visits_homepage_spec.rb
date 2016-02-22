@@ -4,6 +4,6 @@ feature "User visits homepage" do
   scenario "successfully" do
     visit root_path
 
-    expect(page).to have_css 'h1', text: "My Neighborhood Stats"
+    expect(page).to have_css 'h1', text: "Learn more about where you (want to) live."
   end
 end

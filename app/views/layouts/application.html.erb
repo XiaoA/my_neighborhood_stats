@@ -1,15 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>MyNewNeighborhood</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<h1>My Neighborhood Stats</h1>
-<%= render "messages" %>
-<%= yield %>
-
-</body>
+<%= render "navbar" %>
+  <body>
+    <%= render "messages" %>
+    <%= yield %>
+  </body>
 </html>
