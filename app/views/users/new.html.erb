@@ -1,30 +1,21 @@
-<div class="well">
-  <%= form_for @user do |f| %>
-    <%= render 'errors', obj: @user %>
-    <div class="control-group">
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
-    </div>
-
-    <div class="control-group">
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name %>
-    </div>
-
-        <div class="control-group">
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-    </div>
-    
-    <div class="control-group">
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-    </div>
-    <div class="control-group">
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation %>
-    </div>
-
-    <%= f.submit %>
-  <% end %>
+<div class="container-fluid">
+    <div class="col-sm-6 col-sm-offset-4">
+    <h1> Join for free! </h1>
+  </div>
 </div>
+
+<div class="container-fluid">
+    <div class="col-sm-4 col-sm-offset-3">
+      <%= bootstrap_form_for(@user) do |form| %>
+        <%= form.text_field :first_name %> 
+        <%= form.text_field :last_name %>
+        <%= form.email_field :email %>
+        <%= form.password_field :password %>
+        <%= form.password_field :password_confirmation %>
+        <%= form.submit "Sign Up", class: "col-sm-12 btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+
+
+
