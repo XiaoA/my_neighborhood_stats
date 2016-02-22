@@ -27,6 +27,7 @@ group :test do
   gem 'capybara', '~>2.6.0'
   gem 'faker'
   gem 'database_cleaner'
+  gem 'shoulda-matchers', '~>3.1.1'
 end
 
 group :development do
