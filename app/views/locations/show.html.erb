@@ -1,18 +1,67 @@
-<h1> <%=@location.address%> </h1>
-<h2> <%= @location.city %>, <%= @location.state %> <%= @location.zip_code %></h2>
+<div class="jumbotron">
+  <h2> <%=@location.address%> </h2>
+  <h3> <%= @location.city %>, <%= @location.state %> <%= @location.zip_code %></h3>
+</div>
 
-<h2>Neighborhood Demographics</h2>
-<p><a id="census_reporter" href="http://censusreporter.org/profiles/86000US<%= @location.zip_code %>-<%= @location.zip_code %>">Neighborhood Data</a><br>
-  View U.S. Census data for this Zip Code.</p>
-<br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h2 class="panel-title"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp; Neighborhood Demographics</h2>
+        </div>
+        <div class="panel-body">
+          <p><a id="census_reporter" href="http://censusreporter.org/profiles/86000US<%= @location.zip_code %>-<%= @location.zip_code %>">Neighborhood Data</a><br>
+            View U.S. Census data for this Zip Code.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<h2>School District Information</h2>
-<p><a href="http://nces.ed.gov/ccd/schoolsearch/school_list.asp?Search=1&InstName=&SchoolID=&Address=&City=<%= @location.city %>&State=&Zip=<%= @location.zip_code %>&Miles=&County=&PhoneAreaCode=&Phone=&DistrictName=&DistrictID=&SchoolType=1&SchoolType=2&SchoolType=3&SchoolType=4&SpecificSchlTypes=all&IncGrade=-1&LoGrade=-1&HiGrade=-1">Search Schools</a><br> 
-Find information on nearby schools.</p>
-<br>
-<h2>Find your new favorite hangout</h2>
-<p> <a href="http://www.yelp.com/search?find_desc=&find_loc=<%= @location.zip_code %>&ns=1">Yelp</a></p>
-<br>
-<h2>Meet your neighbors</h2>
-<p><a href="https://nextdoor.com/">Nextdoor.com</a> <br>
-  Note: Requires sign-up on an external site; not all neighborhoods available.</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h2 class="panel-title"><span class="glyphicon glyphicon-education" aria-hidden="true"></span>&nbsp; School District Information</h2>
+        </div>
+        <div class="panel-body">
+          <p><a href="http://nces.ed.gov/ccd/schoolsearch/school_list.asp?Search=1&InstName=&SchoolID=&Address=&City=<%= @location.city %>&State=&Zip=<%= @location.zip_code %>&Miles=&County=&PhoneAreaCode=&Phone=&DistrictName=&DistrictID=&SchoolType=1&SchoolType=2&SchoolType=3&SchoolType=4&SpecificSchlTypes=all&IncGrade=-1&LoGrade=-1&HiGrade=-1">Search Schools</a><br> 
+            Find information on nearby schools.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h2 class="panel-title"><span class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span>&nbsp; Find your new favorite hangout</h2>
+        </div>
+        <div class="panel-body">
+          <p> <a href="http://www.yelp.com/search?find_desc=&find_loc=<%= @location.zip_code %>&ns=1">Yelp</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h2 class="panel-title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; Meet your neighbors</h2>
+        </div>
+        <div class="panel-body">
+          <p><a href="https://nextdoor.com/">Nextdoor.com</a> <br>
+            Note: Requires sign-up on an external site; not all neighborhoods available.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
