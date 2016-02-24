@@ -1,22 +1,21 @@
 class LocationsController < ApplicationController
-  #before_action :authenticate
   
   def index
-    @locations = Location.all
+    @locations = Location.where(user_id: current_user)
   end
 
   def new
-    @location = Location.new
+    @location = current_user.locations.build
   end
 
   def create
-    @location = Location.new(location_params)
+    @location = current_user.locations.build(location_params)
     @location.save
-     redirect_to @location, notice: 'Location was successfully created.'
+     redirect_to @location, notice: "Location was successfully created."
    end
 
   def show
-    @location = Location.find(params[:id])
+    @location = Location.find(params[:id])    
   end
   
   private

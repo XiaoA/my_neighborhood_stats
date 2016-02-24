@@ -28,4 +28,10 @@ RSpec.describe User, type: :model do
     expect(sherlock).not_to be_valid
     expect(sherlock.errors[:password].any?).to be_truthy
   end
+
+  it { should have_many(:locations) }
+  it {should validate_presence_of(:first_name) }
+  it {should validate_presence_of(:last_name) }
+  it {should validate_presence_of(:email) }
+  it {should validate_uniqueness_of(:email) }
 end
