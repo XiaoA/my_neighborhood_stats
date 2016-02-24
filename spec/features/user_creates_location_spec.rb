@@ -2,7 +2,9 @@ require 'rails_helper'
 
 feature "User creates location" do
   scenario "successfully" do
-    visit "locations/new"
+   create_user_valid_credentials
+
+    click_on "New Location"
     fill_in "Address", with: "999 Anywhere St"
     fill_in "City", with: "Seattle"
     fill_in "State", with: "WA"

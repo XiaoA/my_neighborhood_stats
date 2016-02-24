@@ -1,1 +1,5 @@
-
+<%= @locations.each do |location| %>
+  <h2> <%= link_to location.address, location %> </h2>
+  <h3> <%= location.city %>, <%= location.state %> <%= location.zip_code %></h3>
+  <hr>
+  <% end %>

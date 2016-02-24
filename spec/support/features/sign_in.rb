@@ -19,11 +19,11 @@ module Features
     visit root_path
 
     click_link 'Sign Up'
-    fill_in 'First name', with: 'John'
-    fill_in 'Last name', with: 'Smith'
-    fill_in 'Email', with: 'john@example.com'
-    fill_in 'Password', with: 'password'
-    fill_in 'Password confirmation', with: 'password'
+    fill_in 'First name', with: 'Sherlock'
+    fill_in 'Last name', with: 'Holmes'
+    fill_in 'Email', with: 'sherlock@example.com'
+    fill_in 'Password', with: 'e1m3taRY!#MyD3arWa2*'
+    fill_in 'Password confirmation', with: 'e1m3taRY!#MyD3arWa2*'
 
     click_button 'Sign Up'
   end
