@@ -11,13 +11,13 @@ class LocationsController < ApplicationController
   def create
     @location = current_user.locations.build(location_params)
     if @location.save
-    flash[:success] = "Location was successfully created."
-    redirect_to @location
+      flash[:success] = "Location was successfully created."
+      redirect_to @location
     else
       flash[:danger] = "Location has not been created."
       render :new
     end
-   end
+  end
 
   def show
     @location = Location.find(params[:id])
@@ -35,6 +35,15 @@ class LocationsController < ApplicationController
     else
       flash[:danger] = "Location has not been updated."
       render :edit
+    end
+  end
+
+  def destroy
+    @user = current_user
+    @location = Location.find(params[:id])
+    if @location.destroy
+      flash[:success] = "Location has been deleted."
+      redirect_to locations_path
     end
   end
 

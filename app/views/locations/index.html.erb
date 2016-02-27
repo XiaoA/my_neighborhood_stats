@@ -1,5 +1,9 @@
-<%= @locations.each do |location| %>
+<%= link_to 'New Location', new_location_path, class: "btn btn-success" %>
+<%= link_to 'Logout', logout_path, class: "btn btn-danger" %>
+
+  
+<% @locations.each do |location| %>
   <h2> <%= link_to location.address, location %> </h2>
   <h3> <%= location.city %>, <%= location.state %> <%= location.zip_code %></h3>
   <hr>
-  <% end %>
+<% end %>

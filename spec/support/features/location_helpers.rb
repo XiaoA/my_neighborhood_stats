@@ -25,4 +25,8 @@ module Features
 
     click_on "Create Location"
   end
+
+  def delete_location
+    click_on "Delete Location"
+  end
 end

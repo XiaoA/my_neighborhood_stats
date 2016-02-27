@@ -115,4 +115,25 @@ RSpec.describe LocationsController, :type => :controller do
       end
     end
   end
+
+  describe "DELETE #destroy" do
+    let(:location) { Fabricate(:location) }
+
+    before(:each) do
+      delete :destroy, id: location.id
+    end
+
+    it 'deletes the location with the given id' do
+      expect(Location.count).to eq(0)
+    end
+
+    it 'sets the flash message' do
+      expect(flash[:success]).to eq('Location has been deleted.')
+    end
+
+    it 'redirects to the user#show page' do
+      expect(response).to redirect_to locations_path
+    end
+  end
 end
+
