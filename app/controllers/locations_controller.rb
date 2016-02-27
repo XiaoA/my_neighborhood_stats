@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  
+
   def index
     @locations = Location.where(user_id: current_user)
   end
@@ -10,14 +10,34 @@ class LocationsController < ApplicationController
 
   def create
     @location = current_user.locations.build(location_params)
-    @location.save
-     redirect_to @location, notice: "Location was successfully created."
+    if @location.save
+    flash[:success] = "Location was successfully created."
+    redirect_to @location
+    else
+      flash[:danger] = "Location has not been created."
+      render :new
+    end
    end
 
   def show
-    @location = Location.find(params[:id])    
+    @location = Location.find(params[:id])
   end
-  
+
+  def edit
+    @location = Location.find(params[:id])
+  end
+
+  def update
+    @location = Location.find(params[:id])
+    if @location.update_attributes(location_params)
+      flash[:success] = "Location was successfully updated."
+      redirect_to @location
+    else
+      flash[:danger] = "Location has not been updated."
+      render :edit
+    end
+  end
+
   private
 
   def location_params
