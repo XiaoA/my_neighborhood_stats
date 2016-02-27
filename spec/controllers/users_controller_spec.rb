@@ -29,6 +29,7 @@ RSpec.describe UsersController, :type => :controller do
 
       it "redirects to the 'users#show' page" do
         post :create, user: Fabricate.attributes_for(:user)
+        
         expect(response).to have_http_status('302')
       end
 

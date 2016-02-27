@@ -1,6 +1,8 @@
 <div class="jumbotron">
   <h2> <%=@location.address%> </h2>
   <h3> <%= @location.city %>, <%= @location.state %> <%= @location.zip_code %></h3>
+  <%= link_to "Update Location", edit_location_path(@location) %>
+  <%= link_to "Delete Location", location_path(@location), method: :delete%>
 </div>
 
 <div class="container-fluid">
