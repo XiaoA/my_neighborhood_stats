@@ -9,6 +9,7 @@ RSpec.feature "Creating users" do
 
     scenario "with invalid credentials" do
       create_user_invalid_credentials
+
       expect(page).to have_content('User has not been created.')
   end
 end
