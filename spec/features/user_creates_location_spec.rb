@@ -14,4 +14,11 @@ feature "User creates location" do
     expect(page).to have_content("Meet your neighbors").and have_link("Nextdoor.com")
 
   end
+
+  scenario "unsuccessfully" do
+    create_user_valid_credentials
+    create_invalid_location
+
+    expect(page).to have_content("Location has not been created.")
+  end
 end

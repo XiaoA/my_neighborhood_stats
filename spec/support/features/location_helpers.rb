@@ -15,4 +15,14 @@ module Features
 
     click_on "Update Location"
   end
+
+  def create_invalid_location
+    click_on "New Location"
+    fill_in "Address", with: " "
+    fill_in "City", with: " "
+    fill_in "State", with: " "
+    fill_in "Zip code", with: " "
+
+    click_on "Create Location"
+  end
 end
