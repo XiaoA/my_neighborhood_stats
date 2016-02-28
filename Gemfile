@@ -16,6 +16,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'figaro'
 gem 'bcrypt', '~>3.1.10'
+gem 'geocoder'
 
 group :development, :test do
   gem 'byebug'

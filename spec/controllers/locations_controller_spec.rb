@@ -33,6 +33,14 @@ RSpec.describe LocationsController, :type => :controller do
         expect(flash[:success]).to eq("Location was successfully created.")
       end
     end
+
+    it "sets the latitude and longitude of the location" do
+        post :create, location: Fabricate.attributes_for(:location)
+
+        expect(Location.last.latitude).to eq(47.6204)
+        expect(Location.last.longitude).to eq(122.3491)
+      end
+
     
     context "an unsuccessful create" do
       before(:each) do
@@ -40,6 +48,7 @@ RSpec.describe LocationsController, :type => :controller do
       end
       
       it "does not save the new user object with invalid inputs" do
+        
         expect(Location.count).to eq(0)
       end
 
@@ -58,13 +67,16 @@ RSpec.describe LocationsController, :type => :controller do
 
     it "returns a successful http request status code" do
       get :show, id: location.id
+
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET #edit" do
     let!(:location) { Fabricate(:location) }
+
     it "sends a successful edit request" do
+
       get :edit, id: location
 
       expect(response).to have_http_status(:success)
@@ -76,13 +88,16 @@ RSpec.describe LocationsController, :type => :controller do
     context "a successful update" do
 
       before(:each) do
-        put :update, id: location.id, :location => { address: "101 Main St." }
+        put :update, id: location.id, :location => { address: "101 Main St.", latitude: 48.6504, longitude: 125.1234 }
+        location.reload
       end
 
       it "updates the location object" do
 
         expect(Location.last.address).to eq("101 Main St.")
         expect(Location.last.address).not_to eq("101 Old Main St.")
+        expect(Location.last.latitude).to eq(48.6504)
+        expect(Location.last.longitude).to eq(125.1234)
       end
 
       it "sets a 'success' flash message" do
