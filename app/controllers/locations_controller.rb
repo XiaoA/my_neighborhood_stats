@@ -2,6 +2,10 @@ class LocationsController < ApplicationController
 
   def index
     @locations = Location.where(user_id: current_user)
+    @hash = Gmaps4rails.build_markers(@location) do |location, marker|
+      marker.lat location.latitude
+      marker.lng location.longitude
+    end
   end
 
   def new
