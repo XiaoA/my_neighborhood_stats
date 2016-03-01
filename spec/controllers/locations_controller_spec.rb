@@ -34,13 +34,17 @@ RSpec.describe LocationsController, :type => :controller do
       end
     end
 
-    it "sets the latitude and longitude of the location" do
-        post :create, location: Fabricate.attributes_for(:location)
+    it "sets the latitude" do
+      post :create, location: Fabricate.attributes_for(:location)
 
-        expect(Location.last.latitude).to eq(47.6204)
-        expect(Location.last.longitude).to eq(122.3491)
-      end
+      expect(Location.last.latitude).to eq(47.6204)
+    end
 
+    it "sets the longitude of the location" do
+      post :create, location: Fabricate.attributes_for(:location)
+
+      expect(Location.last.longitude).to eq(122.3491)
+    end
     
     context "an unsuccessful create" do
       before(:each) do
