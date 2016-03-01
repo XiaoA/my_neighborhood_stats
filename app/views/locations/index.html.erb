@@ -1,9 +1,12 @@
-<%= link_to 'New Location', new_location_path, class: "btn btn-success" %>
-<%= link_to 'Logout', logout_path, class: "btn btn-danger" %>
+<h1>Your Saved Locations</h1>
+<br>
+<br>
 
-  
 <% @locations.each do |location| %>
+  <div class="container-fluid">
+    <div class="col-sm-6 well">
   <h2> <%= link_to location.address, location %> </h2>
   <h3> <%= location.city %>, <%= location.state %> <%= location.zip_code %></h3>
-  <hr>
+    </div>
+  </div>
 <% end %>
