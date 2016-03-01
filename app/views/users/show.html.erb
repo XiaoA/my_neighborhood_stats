@@ -1,4 +1,36 @@
-<%= link_to 'New Location', new_location_path, class: "btn btn-success" %>
-<%= link_to 'Logout', logout_path, class: "btn btn-danger" %>
+<div class="container-fluid">
+  <div class="text-center">
+    <h2>Welcome to the neighborhood.</h2>
+  </div>
+</div>
+<br>
+<br>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="img-responsive">
+        <%= image_tag image_path('chart.png'), class: "col-sm-offset-3" %>
+      </div>
+      <p class="lead text-center">Learn more about the community.</p>
+      <%= link_to 'Get Started', new_location_path, class: "btn btn-success center-block" %>
+    </div>
 
+    <div class="col-sm-4">
+      <div class="img-responsive">
+        <%= image_tag image_path('paper.png'), class: "col-sm-offset-3" %>
+      </div>
+      
+      <p class="lead text-center ">Choose schools.</p>
+      <%= link_to 'Get Started', new_location_path, class: "btn btn-success center-block" %>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="img-responsive">
+        <%= image_tag image_path('city.png'), class: "col-sm-offset-3" %>
+        <p class="lead text-center ">Find a new hangout.</p>
+      </div>
+      <div><%= link_to 'Get Started', new_location_path, class: "btn btn-success center-block" %></div>
+    </div>
+  </div>
+</div>
