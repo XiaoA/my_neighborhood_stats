@@ -1,6 +1,3 @@
-<%= link_to "Update Location", edit_location_path(@location) %>
-<%= link_to "Delete Location", location_path(@location), method: :delete%>
-
 <div class="container">
   <div class="text-center">
     <h1><%= @location.address%></h1>
@@ -22,27 +19,27 @@
         </div>
       </div>
 
-        <div class="panel panel-primary">
-          <div class="panel-heading">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
           <h2 class="panel-title"><span class="glyphicon glyphicon-education" aria-hidden="true"></span>&nbsp; School District Information</h2>
-          </div>
-          <div class="panel-body">
-            <p><a href="http://nces.ed.gov/ccd/schoolsearch/school_list.asp?Search=1&InstName=&SchoolID=&Address=&City=<%= @location.city %>&State=&Zip=<%= @location.zip_code %>&Miles=&County=&PhoneAreaCode=&Phone=&DistrictName=&DistrictID=&SchoolType=1&SchoolType=2&SchoolType=3&SchoolType=4&SpecificSchlTypes=all&IncGrade=-1&LoGrade=-1&HiGrade=-1">Search Schools</a><br> 
-              Find information on nearby schools.</p>
-          </div>
         </div>
+        <div class="panel-body">
+          <p><a href="http://nces.ed.gov/ccd/schoolsearch/school_list.asp?Search=1&InstName=&SchoolID=&Address=&City=<%= @location.city %>&State=&Zip=<%= @location.zip_code %>&Miles=&County=&PhoneAreaCode=&Phone=&DistrictName=&DistrictID=&SchoolType=1&SchoolType=2&SchoolType=3&SchoolType=4&SpecificSchlTypes=all&IncGrade=-1&LoGrade=-1&HiGrade=-1">Search Schools</a><br> 
+            Find information on nearby schools.</p>
+        </div>
+      </div>
 
 
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-      <h2 class="panel-title"><span class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span>&nbsp; Find your new favorite hangout</h2>
-    </div>
-    <div class="panel-body">
-      <p> <a href="http://www.yelp.com/search?find_desc=&find_loc=<%= @location.zip_code %>&ns=1">Yelp</a><br>
-      You're going to love it here.</p>
-          </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h2 class="panel-title"><span class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span>&nbsp; Find your new favorite hangout</h2>
         </div>
-      </div>         
+        <div class="panel-body">
+          <p> <a href="http://www.yelp.com/search?find_desc=&find_loc=<%= @location.zip_code %>&ns=1">Yelp</a><br>
+            You're going to love it here.</p>
+        </div>
+      </div>
+    </div>         
 
     <div class="col-md-6">
       <div style='width: 600px;'>
@@ -66,3 +63,15 @@
     </div>
   </div>
 </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-1">
+      <%= link_to "Update Location", edit_location_path(@location), class: "btn btn-success" %>
+      <%= link_to "Delete Location", location_path(@location), method: :delete, class: "btn btn-danger"%>
+
+    </div>
+  </div>
+</div>
+
+
