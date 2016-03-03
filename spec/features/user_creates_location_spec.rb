@@ -2,7 +2,6 @@ require 'rails_helper'
 
 feature "User creates location" do
   scenario "successfully" do
-
     create_user_valid_credentials
     create_location   
     
@@ -11,8 +10,7 @@ feature "User creates location" do
     expect(page).to have_content("Neighborhood Demographics").and have_link("Neighborhood Data")
     expect(page).to have_content("School District Information").and have_link("Search Schools")
     expect(page).to have_content("Find your new favorite hangout").and have_link("Yelp")
-    expect(page).to have_content("Meet your neighbors").and have_link("Nextdoor.com")
-
+    
   end
 
   scenario "unsuccessfully" do
