@@ -1,6 +1,6 @@
 module Features
   def create_location
-    click_on "New Location"
+    click_on "Get Started"
     fill_in "Address", with: "999 Anywhere St"
     fill_in "City", with: "Seattle"
     fill_in "State", with: "WA"
@@ -17,7 +17,7 @@ module Features
   end
 
   def create_invalid_location
-    click_on "New Location"
+    click_on "Get Started"
     fill_in "Address", with: " "
     fill_in "City", with: " "
     fill_in "State", with: " "

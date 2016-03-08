@@ -1,32 +1,12 @@
-
-<div class="jumbotron">
-  <h2> <%=@location.address%> </h2>
-  <h3> <%= @location.city %>, <%= @location.state %> <%= @location.zip_code %></h3>
-  <%= link_to "Update Location", edit_location_path(@location) %>
-  <%= link_to "Delete Location", location_path(@location), method: :delete%>
-</div>
-
-  <div style='width: 600px;'>
-    <div id="map" style='width: 600px; height: 400px;'></div>
+<div class="container">
+  <div class="text-center">
+    <h1><%= @location.address%></h1>
+    <h2><%= @location.city%>, <%=@location.state %> <%=@location.zip_code%></h2>
   </div>
+</div>
+<hr>
 
-  <script type="text/javascript">
-   handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-  markers = handler.addMarkers([
-    {
-      "lat": <%=@location.latitude %>,
-      "lng": <%=@location.longitude %>,
-      "infowindow": "<%=@location.address%>"
-    }
-  ]);
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-});
-   </script>
-
-
-<div class="container-fluid">
+<div class="container">
   <div class="row">
     <div class="col-sm-6">
       <div class="panel panel-primary">
@@ -38,13 +18,7 @@ handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
             View U.S. Census data for this Zip Code.</p>
         </div>
       </div>
-    </div>
-  </div>
-</div>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-6">
       <div class="panel panel-primary">
         <div class="panel-heading">
           <h2 class="panel-title"><span class="glyphicon glyphicon-education" aria-hidden="true"></span>&nbsp; School District Information</h2>
@@ -54,37 +28,49 @@ handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
             Find information on nearby schools.</p>
         </div>
       </div>
-    </div>
-  </div>
-</div>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-6">
+
       <div class="panel panel-primary">
         <div class="panel-heading">
           <h2 class="panel-title"><span class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span>&nbsp; Find your new favorite hangout</h2>
         </div>
         <div class="panel-body">
-          <p> <a href="http://www.yelp.com/search?find_desc=&find_loc=<%= @location.zip_code %>&ns=1">Yelp</a></p>
+          <p> <a href="http://www.yelp.com/search?find_desc=&find_loc=<%= @location.zip_code %>&ns=1">Yelp</a><br>
+            You're going to love it here.</p>
         </div>
       </div>
+    </div>         
+
+    <div class="col-md-6">
+      <div style='width: 600px;'>
+        <div id="map" style='width: 600px; height: 400px;'></div>
+      </div>
+
+      <script type="text/javascript">
+       handler = Gmaps.build('Google');
+       handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+         markers = handler.addMarkers([
+           {
+             "lat": <%=@location.latitude %>,
+             "lng": <%=@location.longitude %>,
+             "infowindow": "<%=@location.address%>"
+           }
+         ]);
+         handler.bounds.extendWith(markers);
+         handler.fitMapToBounds();
+       });
+      </script>
     </div>
   </div>
 </div>
 
-<div class="container-fluid">
+<div class="container">
   <div class="row">
-    <div class="col-sm-6">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h2 class="panel-title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; Meet your neighbors</h2>
-        </div>
-        <div class="panel-body">
-          <p><a href="https://nextdoor.com/">Nextdoor.com</a> <br>
-            Note: Requires sign-up on an external site; not all neighborhoods available.</p>
-        </div>
-      </div>
+    <div class="col-sm-6 col-sm-offset-1">
+      <%= link_to "Update Location", edit_location_path(@location), class: "btn btn-success" %>
+      <%= link_to "Delete Location", location_path(@location), method: :delete, class: "btn btn-danger"%>
     </div>
   </div>
 </div>
+
+
